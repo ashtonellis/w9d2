@@ -1,23 +1,21 @@
-let canvasWidth = 400;
-const canvasHeight = 400;
-let fillColor = "black";
+let canvasHeight = 400
+let canvasWidth = 400
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   rectMode(CENTER);
+  angleMode(DEGREES);
 }
 
 function draw() {
   background(125);
-  fill(fillColor);
-    rect(200,200,40,40);
-  
-}
- 
-function keyPressed() {
-  if (fillColor == "black") {
-    fillColor = "white";
-  } else {
-    fillColor = "black";
-  }
+
+  push();
+  fill("white")
+  translate(200,200);
+  rotate(45);
+  rect(0,0,40,40);
+  pop();
+  fill("black");
+  rect(200,200,20,20)
 }
